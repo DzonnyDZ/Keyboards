@@ -1,0 +1,5 @@
+Jedná se o první pokusnou BETA verzi arabské fonetické klávesnice. Rozložení s v pøíštích verzích mùže radikálnì zmìnit. Obsahuje i nìkteré znaky používané dalšími jazyky jako perštinou nebu kurdštinou. Pro návod k instalaci vizte napø. Ruskou (rozložení jako latinka).
+Verze QWERTZ pro Win NT4.0/2000/XP/2003/Vista/2008/7 platformy x86/x64/Itanium.
+---
+This is first experimental BETA version of Arabic phonetic keyboard. Layout can be significantly changed in following versions. It provides also some additional characters used by other languages like Persian or Kurdish. For setup instructions see e.g. Russian (Latin Layout) (Ruská (rozložení jako latinka)).
+Version: QWERTZ for Win NT4.0/2000/XP/2003/Vista/2008/7 platforms x86/x64/Itanium.
