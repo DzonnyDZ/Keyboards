@@ -1,0 +1,9 @@
+Øecká - rozloení jako latinka (0.9.0)
+--------------------------------------
+(c) Ğonny 2004
+Soubor poslední záchrany
+
+Tento soubor obsahuje dodateèné inforamce o instalaci
+1) Rozbalte obsah archivu vèetnì podsloek (nespouštìjte z archivu; po rozbalení musí sloka se souborem MSI obsahovat podsloku i386 se souborem CZGR.dll)
+2) Spuste instalaèní balíèek CZGR.msi
+3) Dále se øiïte podle pokynnù v souboru CZGR.chm

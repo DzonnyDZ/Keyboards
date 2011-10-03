@@ -1,0 +1,36 @@
+[OPTIONS]
+Auto Index=Yes
+Compatibility=1.1
+Compiled file=CZGR.chm
+Contents file=CZGR.hhc
+Default topic=usage.htm
+Display compile progress=No
+Full-text search=Yes
+Index file=Index.hhk
+Language=0x405 Èeština
+Title=Øecká - rozložení jako latinka
+
+
+[FILES]
+usage.htm
+about.htm
+chars.htm
+index.htm
+install.htm
+layout.html
+Modificators.htm
+uninstall.htm
+images\Modifi6.jpg
+images\CZGR.jpg
+images\CZGRAltGr.jpg
+images\CZGRAltGrCaps.jpg
+images\CZGRCaps.jpg
+images\CZGRShft.jpg
+images\CZGRShftAltGr.jpg
+images\CZGRShftAltGrCaps.jpg
+images\CZGRShftCaps.jpg
+images\chars.1.gif
+images\chars.2.gif
+images\Modifi3.jpg
+images\Modifi4.jpg
+images\Modifi5.jpg
