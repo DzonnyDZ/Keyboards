@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?><ItemProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><Properties><Property><Name>tsvn:autoprops</Name><Value>*.gif = svn:mime-type=image/gif
+*.png = svn:mime-type=image/png
+*.jpeg = svn:mime-type=image/jpeg
+*.jpg = svn:mime-type=image/jpeg
+*.html = svn:mime-type=text/html
+*.htm = svn:mime-type=text/html
+*.klc = svn:mime-type=text/plain
+*.xlsm = svn:mime-type=application/vnd.ms-excel.sheet.macroEnabled.12
+*.txt = svn:mime-type=text/plain
+*.pdf = svn:mime-type=application/pdf
+*.docx = svn:mime-type=application/vnd.openxmlformats-officedocument.wordprocessingml.document</Value></Property><Property><Name>svn:ignore</Name><Value>czrusint
+</Value></Property><Property><Name>bugtraq:number</Name><Value>true</Value></Property></Properties></ItemProperties>
