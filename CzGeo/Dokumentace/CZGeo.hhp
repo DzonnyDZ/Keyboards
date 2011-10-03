@@ -1,0 +1,23 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=CZGeo.chm
+Contents file=Table of Contents.hhc
+Default topic=index.htm
+Display compile progress=Yes
+Full-text search=Yes
+Language=0x405 Èeština
+Title=Gruzínská - rozložení jako latinka (0.9.0)
+
+
+[FILES]
+..\Dokumentace\usage.htm
+..\Dokumentace\about.htm
+..\Dokumentace\chars.htm
+..\Dokumentace\index.htm
+..\Dokumentace\install.htm
+..\Dokumentace\layout.html
+..\Dokumentace\Modificators.htm
+..\Dokumentace\uninstall.htm
+
+[INFOTYPES]
+
