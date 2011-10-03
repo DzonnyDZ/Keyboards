@@ -1,0 +1,40 @@
+[OPTIONS]
+Auto Index=Yes
+Compiled file=Doc.chm
+Contents file=Doc.hhc
+Default topic=index.htm
+Display compile progress=Yes
+Full-text search=Yes
+Index file=Index.hhk
+Language=0x405 Èeština
+Title=Ruská - rozložení jako latinka (1.0.0)
+
+
+[FILES]
+usage.htm
+about.htm
+chars.htm
+index.htm
+install.htm
+layout.html
+Modificators.htm
+uninstall.htm
+images\Modifi8.png
+images\CZRus.jpg
+images\CZRusAltGr.jpg
+images\CZRusAltGrCaps.jpg
+images\CZRusCaps.jpg
+images\CZRusShft.jpg
+images\CZRusShftAltGr.jpg
+images\CZRusShftAltGrCaps.jpg
+images\CZRusShftCaps.jpg
+images\Modifi1.png
+images\Modifi2.png
+images\Modifi3.png
+images\Modifi4.png
+images\Modifi5.png
+images\Modifi6.png
+images\Modifi7.png
+
+[INFOTYPES]
+
