@@ -1,4 +1,4 @@
-﻿Ruská - České rozložení 2.0.1 © Đonny 20005-2011
+﻿Ruská - České rozložení 2.0.2 © Đonny 2005-2011
 ================================================
 * Čtěte readme.html
 * 4 různá rozložení
@@ -9,7 +9,7 @@
 * Spusťte setup.exe v příslušné složce
 * Je možno mít nainstalováno i více rozložení.
 
-Russian - Czech layout 2.0.1 © Đonny 2005-2011
+Russian - Czech layout 2.0.2 © Đonny 2005-2011
 ==============================================
 * Read readme.html (in Czech)
 * 4 different layouts
@@ -20,7 +20,7 @@ Russian - Czech layout 2.0.1 © Đonny 2005-2011
 * Run setup.exe from appropriate folder
 * It's possible to hame multiple layouts installed simultaneously.
 
-Русские - Чешская макета 2.0.1 © 2005-2011 Đonny
+Русские - Чешская макета 2.0.2 © 2005-2011 Đonny
 ================================================
 * Прочитайте readme.html (на чешском языке)
 * 4 различных макетов
