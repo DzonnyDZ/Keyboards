@@ -14,7 +14,8 @@
 *.html = svn:mime-type=text/html
 *.htm = svn:mime-type=text/html
 *.klc = svn:mime-type=text/plain
-*.txt = svn:mime-type=text/plain]]></Value>
+*.txt = svn:mime-type=text/plain
+*.pdf = svn:mime-type=application/pdf]]]></Value>
         </Property>
     </Properties>
 </ItemProperties>
