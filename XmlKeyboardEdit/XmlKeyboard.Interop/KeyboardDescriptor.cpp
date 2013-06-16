@@ -36,6 +36,6 @@ KeyboardDescriptor^ KeyboardDescriptor::LoadKeyboard(String^ dllPath){
             kbdNlsTables = kbdNlsLayerDescriptorDelegate();
         return gcnew KeyboardDescriptor(kbdTables, kbdNlsTables);
     }finally{
-        if(dllModule!=nullptr)dllModule->Dispose();
+        delete dllModule;
     }
 }

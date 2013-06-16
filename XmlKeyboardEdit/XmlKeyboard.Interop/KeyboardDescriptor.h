@@ -15,7 +15,7 @@ namespace Dzonny {
         private delegate PKBDNLSTABLES KbdNlsLayerDescriptor();
 
         /// <summary>Managed keyboard descriptor</summary>
-        ref class KeyboardDescriptor
+        public ref class KeyboardDescriptor
         {
         private:
             BYTE bvalue;
