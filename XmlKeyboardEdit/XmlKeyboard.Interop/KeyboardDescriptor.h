@@ -18,6 +18,7 @@ namespace Dzonny {
         ref class KeyboardDescriptor
         {
         private:
+            BYTE bvalue;
             /// <summary>Pointer to a <see cref="KBDTABLES"/> structure that contains basic keyboard description</summary>
             initonly PKBDTABLES kbdTables;
             /// <summary>Pointer to a <see cref="KBDNLSTABLES"/> structure that contains extended far-east keyboard features.</summary>
