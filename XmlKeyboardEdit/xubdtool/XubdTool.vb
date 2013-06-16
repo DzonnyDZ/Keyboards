@@ -44,7 +44,7 @@ Friend Module XubdTool
     End Sub
 
     Private Sub MakeXml(dll$, xml$)
-      
+        Dim info = KeyboardDescriptor.LoadKeyboard(dll)
     End Sub
 
 End Module

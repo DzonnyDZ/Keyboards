@@ -35,6 +35,13 @@
     </ClInclude>
     <ClInclude Include="KeyboardDescriptor.h" />
     <ClInclude Include="Stdafx.h" />
+    <ClInclude Include="KeyboardDescriptor.h" />
+    <ClInclude Include="Stdafx.h" />
+    <ClInclude Include="kbdfr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyboardDescriptor.h" />
+    <ClInclude Include="Stdafx.h" />
     <ClInclude Include="kbdfr.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -42,19 +49,6 @@
     <ClInclude Include="Stdafx.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="kbdfr.rc">
-      <Filter>Resource Files</Filter>
-    </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="*.def;*.bat;*.hpj;*.asmx">
-      <Filter>Source Files</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="kbdfr.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="AssemblyInfo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

@@ -112,6 +112,10 @@
       <Project>{bf301d09-70d3-4058-8035-83ff1f32b9b3}</Project>
       <Name>XmlKeyboard.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\XmlKeyboard.Interop\XmlKeyboard.Interop.vcxproj">
+      <Project>{59e4f833-070c-48c6-8de5-560eb0849859}</Project>
+      <Name>XmlKeyboard.Interop</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

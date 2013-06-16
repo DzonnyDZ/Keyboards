@@ -4,8 +4,8 @@
 
 #pragma once
 
-//#include <intrin.h>
-//#include <windows.h>
+#pragma unmanaged
 #include <minwindef.h>
 #include "kbd.h"
-//#include <dontuse.h>
+#include <dontuse.h>
+#pragma managed
