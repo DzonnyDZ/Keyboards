@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?><ItemProperties xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Properties><Property><Name>tsvn:autoprops</Name><Value>*.jpeg = svn:mime-type=image/jpeg
+*.jpg = svn:mime-type=image/jpeg
+*.png = svn:mime-type=image/png
+*.gif = svn:mime-type=image/gif
+*.html = svn:mime-type=text/html
+*.htm = svn:mime-type=text/html
+*.klc = svn:mime-type=text/plain
+*.txt = svn:mime-type=text/plain
+*.pdf = svn:mime-type=application/pdf]</Value></Property><Property><Name>svn:ignore</Name><Value>Debug
+ipch
+*.sdf
+*.suo
+</Value></Property><Property><Name>svn:mime-type</Name><Value>text/plain</Value></Property></Properties></ItemProperties>
