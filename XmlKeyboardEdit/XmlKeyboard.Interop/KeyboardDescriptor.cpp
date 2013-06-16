@@ -20,12 +20,9 @@ KeyboardDescriptor^ KeyboardDescriptor::LoadKeyboard(String^ dllPath){
     if(!IO::File::Exists(dllPath)) throw gcnew IO::FileNotFoundException("File not found", dllPath);
     UnmanagedModule^ dllModule;
     try{
-        dllModule= UnmanagedModule::LoadLibraryAsDataFile(dllPath); //Local object gets disposed automatically on method exit
-        IntPtr kbdLayerDescriptor = dllModule->GetProcedureAddress("KbdLayerDescriptor");
-        IntPtr kbdNlsLayerDescriptor = IntPtr::Zero;
-        try{
-            kbdNlsLayerDescriptor = dllModule->GetProcedureAddress("KbdNlsLayerDescriptor");
-        }catch(Exception^){ }
+        dllModule= UnmanagedModule::LoadLibrary(dllPath); //Local object gets disposed automatically on method exit
+        IntPtr kbdLayerDescriptor = dllModule->GetProcedureAddress(L"KbdLayerDescriptor");
+        IntPtr kbdNlsLayerDescriptor = dllModule->TryGetProcedureAddress(L"KbdNlsLayerDescriptor");
         KbdLayerDescriptor^ kbdLayerDescriptorDelegate = (KbdLayerDescriptor^)Marshal::GetDelegateForFunctionPointer (kbdLayerDescriptor, KbdLayerDescriptor::typeid);
         KbdNlsLayerDescriptor^ kbdNlsLayerDescriptorDelegate =nullptr;
         if(kbdNlsLayerDescriptor!= IntPtr::Zero) 

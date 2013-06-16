@@ -4472,6 +4472,11 @@ Tools.Win
 	<returns>Pointer to native method with given name</returns>
 	<exception cref="T:Tools.API.Win32APIException">Failed to obtain method address</exception>
 	<remarks>The spelling and case of a function name pointed to by <paramref name="procedureName"/> must be identical to that in the EXPORTS statement of the source DLL's module-definition (.def) file.</remarks>
+</member><member name="M:Tools.InteropT.UnmanagedModule.TryGetProcedureAddress(System.String)">
+	<summary>Attempts to gets a pointer to native method (or variable) in the module</summary>
+	<param name="procedureName">Name of the method to get pointer to</param>
+	<returns>Pointer to native method with given name, <see cref="F:System.IntPtr.Zero"/> if the method cannot be found or operation failed.</returns>
+	<remarks>The spelling and case of a function name pointed to by <paramref name="procedureName"/> must be identical to that in the EXPORTS statement of the source DLL's module-definition (.def) file.</remarks>
 </member><member name="M:Tools.InteropT.UnmanagedModule.GetResourceTypes">
 	<summary>Gets list of types of resources in this module</summary>
 	<returns>List of all types of resources in this module</returns>
@@ -5938,7 +5943,7 @@ A strongly-typed resource class, for looking up localized strings, formatting th
 </member><member name="M:Tools.API.Common.GetProcAddress(System.IntPtr,System.String)">
 	<summary>Retrieves the address of an exported function or variable from the specified dynamic-link library (DLL).</summary>
 	<param name="hModule">A handle to the DLL module that contains the function or variable. </param>
-	<param name="procedureName">The function or variable name, or the function's ordinal value. If this parameter is an ordinal value, it must be in the low-order word; the high-order word must be zero.</param>
+	<param name="lpProcName">The function or variable name, or the function's ordinal value. If this parameter is an ordinal value, it must be in the low-order word; the high-order word must be zero.</param>
 	<returns>If the function succeeds, the return value is the address of the exported function or variable.</returns>
 </member><member name="M:Tools.API.Common.FindResource(System.IntPtr,System.String,System.String)">
 	<summary>Determines the location of a resource with the specified type and name in the specified module.</summary>
