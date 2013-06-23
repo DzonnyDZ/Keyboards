@@ -2,6 +2,7 @@
 
 using namespace Dzonny::XmlKeyboard::Interop;
 using namespace System;
+using namespace System::Runtime::InteropServices;
 
 KeyName::KeyName(PVSC_LPWSTR keyName)
 {
@@ -14,8 +15,8 @@ BYTE KeyName::ScanCode::get(){
 }
 
 String^ KeyName::Name::get(){
-    if(name == nullptr){
-        name = gcnew String(keyName->pwsz);
+    if(name == nullptr && keyName->pwsz != NULL){
+        name = Marshal::PtrToStringUni((IntPtr)(void*)keyName->pwsz);
     }
     return name;
 }

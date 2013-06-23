@@ -36,13 +36,19 @@ namespace Dzonny { namespace XmlKeyboard { namespace Interop {
     bool IsZero<VK_TO_BIT>(PVK_TO_BIT item){
         return item == NULL || (item->Vk == 0 && item->ModBits == 0);
     }
+
+    template<>
+    bool IsZero<VK_TO_WCHARS1>(PVK_TO_WCHARS1 item){
+        return item == NULL || (item->Attributes == 0 && item->VirtualKey == 0 && item->wch == NULL);
+    }
 #pragma endregion
 
     cli::array<Ligature^>^ InitArrayUntilZero(PLIGATURE1 pointer, BYTE ligatureMax, BYTE ligatureLength){
-
         List<Ligature^>^ ret = gcnew List<Ligature^>();
-        for(void* ptr = pointer; IsZero<LIGATURE1>((PLIGATURE1)ptr); ptr = (BYTE*)ptr + ligatureLength){
-            ret->Add(gcnew Ligature((PLIGATURE1)ptr, ligatureMax));
+        if(ligatureLength > 0){
+            for(auto ptr = pointer; !IsZero<LIGATURE1>(ptr); ptr = (PLIGATURE1)((BYTE*)ptr + ligatureLength)){
+                ret->Add(gcnew Ligature((PLIGATURE1)ptr, ligatureMax));
+            }
         }
         return ret->ToArray();
     }

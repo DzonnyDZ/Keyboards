@@ -16,7 +16,7 @@ namespace Dzonny { namespace XmlKeyboard { namespace Interop {
     private delegate PKBDNLSTABLES KbdNlsLayerDescriptor();
 
     /// <summary>Managed keyboard descriptor</summary>
-    public ref class KeyboardDescriptor
+    public ref class KeyboardDescriptor : IDisposable
     {
     private:
         /// <summary>Pointer to a <see cref="KBDTABLES"/> structure that contains basic keyboard description</summary>
@@ -26,12 +26,21 @@ namespace Dzonny { namespace XmlKeyboard { namespace Interop {
         initonly PKBDNLSTABLES kbdNlsTables;
         KbdTables^ kbdTablesWrapper;
         KbdNlsTables^ kbdNlsTablesWrapper;
+        /// <summary>Optional object to be disposed when this instance is disposed</summary>
+        IDisposable^ source;
     internal:
         /// <summary>CTor - creates a new instance of the <see cref="KeyboardDescriptor"/> class</summary>
         /// <param name="kbdTables">Pointer to a <see cref="KBDTABLES"/> structure that contains basic keyboard description</param>
         /// <param name="kbdNlsTables">Pointer to a <see cref="KBDNLSTABLES"/> structure that contains extended far-east keyboard features. May be null.</param>
         /// <exception cref="ArgumentNullException"><paramref name="kbdTables"/> is null</exception>
         KeyboardDescriptor(const PKBDTABLES kbdTables, const PKBDNLSTABLES kbdNlsTables);
+        
+        /// <summary>CTor - creates a new instance of the <see cref="KeyboardDescriptor"/> class</summary>
+        /// <param name="kbdTables">Pointer to a <see cref="KBDTABLES"/> structure that contains basic keyboard description</param>
+        /// <param name="kbdNlsTables">Pointer to a <see cref="KBDNLSTABLES"/> structure that contains extended far-east keyboard features. May be null.</param>
+        /// <param name="source">An object data were loaded from. This object must be kept alive in order pointers to be valid. This object will be disposed once this instance is disposed.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="kbdTables"/> is null</exception>
+        KeyboardDescriptor(const PKBDTABLES kbdTables, const PKBDNLSTABLES kbdNlsTables, IDisposable^ source);
     public:
         /// <summary>Loads a keyboard layout from a DLL</summary>
         /// <param name="dllPath">Full path, or file name of DLL to load keyboard from</param>
@@ -46,5 +55,8 @@ namespace Dzonny { namespace XmlKeyboard { namespace Interop {
         property KbdTables^ KbdTables {Dzonny::XmlKeyboard::Interop::KbdTables^ get();}
         /// <summary>Gets extended far-east information for keyboard layout (if available)</summary>
         property KbdNlsTables^ KbdNlsTables {Dzonny::XmlKeyboard::Interop::KbdNlsTables^ get();}
+
+        /// <summary>Destructor</summary>
+        ~KeyboardDescriptor();
     };
 }}}

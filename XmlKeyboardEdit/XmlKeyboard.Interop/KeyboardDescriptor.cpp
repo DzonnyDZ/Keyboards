@@ -13,6 +13,12 @@ KeyboardDescriptor::KeyboardDescriptor(PKBDTABLES kbdTables, PKBDNLSTABLES kbdNl
     this->kbdNlsTables = kbdNlsTables;
 }
 
+KeyboardDescriptor::KeyboardDescriptor(PKBDTABLES kbdTables, PKBDNLSTABLES kbdNlsTables, IDisposable^ source)
+{
+    this->KeyboardDescriptor::KeyboardDescriptor(kbdTables, kbdNlsTables);
+    this->source  = source; 
+}
+
 KeyboardDescriptor^ KeyboardDescriptor::LoadKeyboard(String^ dllPath){
     if(dllPath==nullptr) throw gcnew ArgumentNullException("dllPath");
     if(!dllPath->Contains(IO::Path::DirectorySeparatorChar.ToString()) && !dllPath->Contains(IO::Path::AltDirectorySeparatorChar.ToString()))
@@ -20,7 +26,7 @@ KeyboardDescriptor^ KeyboardDescriptor::LoadKeyboard(String^ dllPath){
     if(!IO::File::Exists(dllPath)) throw gcnew IO::FileNotFoundException("File not found", dllPath);
     UnmanagedModule^ dllModule;
     try{
-        dllModule= UnmanagedModule::LoadLibrary(dllPath); //Local object gets disposed automatically on method exit
+        dllModule = UnmanagedModule::LoadLibrary(dllPath); 
         IntPtr kbdLayerDescriptor = dllModule->GetProcedureAddress(L"KbdLayerDescriptor");
         IntPtr kbdNlsLayerDescriptor = dllModule->TryGetProcedureAddress(L"KbdNlsLayerDescriptor");
         KbdLayerDescriptor^ kbdLayerDescriptorDelegate = (KbdLayerDescriptor^)Marshal::GetDelegateForFunctionPointer (kbdLayerDescriptor, KbdLayerDescriptor::typeid);
@@ -31,9 +37,10 @@ KeyboardDescriptor^ KeyboardDescriptor::LoadKeyboard(String^ dllPath){
         PKBDNLSTABLES kbdNlsTables = NULL;
         if(kbdNlsLayerDescriptorDelegate!=nullptr)
             kbdNlsTables = kbdNlsLayerDescriptorDelegate();
-        return gcnew KeyboardDescriptor(kbdTables, kbdNlsTables);
-    }finally{
+        return gcnew KeyboardDescriptor(kbdTables, kbdNlsTables, dllModule);
+    }catch(Exception^){
         delete dllModule;
+        throw;
     }
 }
 
@@ -46,4 +53,8 @@ KbdNlsTables^ KeyboardDescriptor::KbdNlsTables::get(){
     if(kbdNlsTables == NULL) return nullptr;
     if(kbdNlsTablesWrapper == nullptr) kbdNlsTablesWrapper = gcnew Dzonny::XmlKeyboard::Interop::KbdNlsTables(kbdNlsTables);
     return kbdNlsTablesWrapper;
+}
+
+KeyboardDescriptor::~KeyboardDescriptor(){
+    delete source;
 }

@@ -48,9 +48,6 @@
     <ClInclude Include="Modifiers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Vk2WChar.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="KeyName.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -81,6 +78,18 @@
     <ClInclude Include="Vk2Bit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Vks2WChars.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vk2WChar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VkFunction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NlsFParam.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp">
@@ -99,9 +108,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Modifiers.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Vk2WChar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="KeyName.cpp">
@@ -123,6 +129,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Vk2Bit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vks2WChars.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vk2WChar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VkFunction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NlsFParam.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

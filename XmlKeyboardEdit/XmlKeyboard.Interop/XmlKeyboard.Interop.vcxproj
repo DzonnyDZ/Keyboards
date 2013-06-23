@@ -121,10 +121,13 @@
     <ClCompile Include="KeyName.cpp" />
     <ClCompile Include="Ligature.cpp" />
     <ClCompile Include="Modifiers.cpp" />
+    <ClCompile Include="NlsFParam.cpp" />
     <ClCompile Include="Stdafx.cpp" />
     <ClCompile Include="Utils.cpp" />
     <ClCompile Include="Vk2Bit.cpp" />
     <ClCompile Include="Vk2WChar.cpp" />
+    <ClCompile Include="VkFunction.cpp" />
+    <ClCompile Include="Vks2WChars.cpp" />
     <ClCompile Include="Vsc2Vk.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -145,10 +148,13 @@
     <ClInclude Include="KeyName.h" />
     <ClInclude Include="Ligature.h" />
     <ClInclude Include="Modifiers.h" />
+    <ClInclude Include="NlsFParam.h" />
     <ClInclude Include="Stdafx.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="Vk2Bit.h" />
     <ClInclude Include="Vk2WChar.h" />
+    <ClInclude Include="VkFunction.h" />
+    <ClInclude Include="Vks2WChars.h" />
     <ClInclude Include="Vsc2Vk.h" />
   </ItemGroup>
   <ItemGroup>

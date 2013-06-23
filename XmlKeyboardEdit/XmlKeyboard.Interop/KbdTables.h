@@ -1,7 +1,7 @@
 #pragma once
 #include "Stdafx.h"
 #include "Modifiers.h"
-#include "Vk2WChar.h"
+#include "Vks2WChars.h"
 #include "KeyName.h"
 #include "DeadKeyName.h"
 #include "Vsc2Vk.h"
@@ -21,7 +21,7 @@ namespace Dzonny { namespace XmlKeyboard { namespace Interop {
         initonly PKBDTABLES kbdTables;
 
         Modifiers^ modifiers;
-        cli::array<Vk2WChar^>^ vk2WChars;
+        cli::array<Vks2WChars^>^ vks2WChars;
         cli::array<DeadKey^>^ deadKeys;
         cli::array<KeyName^>^ keyNames;
         cli::array<KeyName^>^ keyNamesExt;
@@ -39,7 +39,7 @@ namespace Dzonny { namespace XmlKeyboard { namespace Interop {
         /// <summary>Gets modifier specification</summary>
         property Modifiers^ Modifiers{Dzonny::XmlKeyboard::Interop::Modifiers^ get();} 
         /// <summary>Gets mapping of Virtual keys to characters</summary>
-        property cli::array<Vk2WChar^>^ Vk2WChars{cli::array<Vk2WChar^>^ get();}
+        property cli::array<Vks2WChars^>^ Vks2WChars{cli::array<Dzonny::XmlKeyboard::Interop::Vks2WChars^>^ get();}
         /// <summary>Gets dead key definitions</summary>
         property cli::array<DeadKey^>^ DeadKeys{cli::array<DeadKey^>^ get();}
         /// <summary>Gets name of basic keys</summary>
@@ -60,12 +60,12 @@ namespace Dzonny { namespace XmlKeyboard { namespace Interop {
         property KbdVersion KbdVersion{Dzonny::XmlKeyboard::Interop::KbdVersion get();}
         /// <summary>Gets ligatures definition</summary>
         property cli::array<Ligature^>^ Ligatures{cli::array<Ligature^>^ get();}
-        /// <summary>Kets keboad type</summary>
-        property DWORD Type{DWORD get();}
-        /// <summary>Gets keyboard sub-type</summary>
-        property WORD SubType{WORD get();}
-        /// <summary>Gets keyboard OEM id</summary>
-        property WORD OemId{WORD get();}
+        /// <summary>Gets keboad type (if specified)</summary>
+        property Nullable<DWORD> Type{Nullable<DWORD> get();}
+        /// <summary>Gets keyboard sub-type  (if specified)</summary>
+        property Nullable<WORD> SubType{Nullable<WORD> get();}
+        /// <summary>Gets keyboard OEM id  (if specified)</summary>
+        property Nullable<WORD> OemId{Nullable<WORD> get();}
     }; 
 
     /// <summary>Defines locale flasgs for keyboard layout</summary>

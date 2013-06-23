@@ -13,5 +13,10 @@ namespace Dzonny { namespace XmlKeyboard { namespace Interop {
         /// <param name="vsc2Vk">A pointer to unmanaged <see cref="VSC_VK"/> structure to wrap in a new instance</param>
         /// <exception cref="ArgumentNullException"><paramref name="vsc2Vk"/> is null</exception>
         Vsc2Vk(const PVSC_VK vsc2Vk);
+    public: 
+        /// <summary>Gets virtual scan code</summary>
+        property BYTE ScanCode{BYTE get();}
+        /// <summary>Gets virtual key code</summary>
+        property USHORT VirtualKey{USHORT get();}
     };
 }}}
