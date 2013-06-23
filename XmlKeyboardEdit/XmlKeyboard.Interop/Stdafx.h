@@ -7,3 +7,5 @@
 #include <minwindef.h>
 #include "kbd.h"
 #include <dontuse.h>
+
+#include "Common.h"

@@ -1,4 +1,5 @@
 ﻿Imports Tools.InteropT
+Imports Dzonny.XmlKeyboard.Interop
 
 Friend Module XubdTool
 

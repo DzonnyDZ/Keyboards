@@ -108,12 +108,24 @@
       </CallingConvention>
       <XMLDocumentationFileName>$(TargetPath).xml</XMLDocumentationFileName>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessToFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</PreprocessToFile>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="DeadKey.cpp" />
+    <ClCompile Include="DeadKeyName.cpp" />
+    <ClCompile Include="KbdNlsTables.cpp" />
+    <ClCompile Include="KbdTables.cpp" />
     <ClCompile Include="KeyboardDescriptor.cpp" />
+    <ClCompile Include="KeyName.cpp" />
+    <ClCompile Include="Ligature.cpp" />
+    <ClCompile Include="Modifiers.cpp" />
     <ClCompile Include="Stdafx.cpp" />
+    <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="Vk2Bit.cpp" />
+    <ClCompile Include="Vk2WChar.cpp" />
+    <ClCompile Include="Vsc2Vk.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Inf Exclude="@(Inf)" Include="*.inf" />
@@ -124,8 +136,20 @@
     <None Exclude="@(None)" Include="*.ico;*.cur;*.bmp;*.dlg;*.rct;*.gif;*.jpg;*.jpeg;*.wav;*.jpe;*.tiff;*.tif;*.png;*.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Common.h" />
+    <ClInclude Include="DeadKey.h" />
+    <ClInclude Include="DeadKeyName.h" />
+    <ClInclude Include="KbdNlsTables.h" />
+    <ClInclude Include="KbdTables.h" />
     <ClInclude Include="KeyboardDescriptor.h" />
+    <ClInclude Include="KeyName.h" />
+    <ClInclude Include="Ligature.h" />
+    <ClInclude Include="Modifiers.h" />
     <ClInclude Include="Stdafx.h" />
+    <ClInclude Include="Utils.h" />
+    <ClInclude Include="Vk2Bit.h" />
+    <ClInclude Include="Vk2WChar.h" />
+    <ClInclude Include="Vsc2Vk.h" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Tools.Win, Version=1.5.4.37288, Culture=neutral, PublicKeyToken=373c02ac923768e6, processorArchitecture=MSIL">

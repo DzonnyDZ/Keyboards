@@ -1,14 +1,14 @@
 #include "stdafx.h"
 #include "KeyboardDescriptor.h"
 
-using namespace Dzonny::XmlKeyboard;
+using namespace Dzonny::XmlKeyboard::Interop;
 using namespace System;
 using namespace System::Runtime::InteropServices;
 using namespace Tools::InteropT;
 
 KeyboardDescriptor::KeyboardDescriptor(PKBDTABLES kbdTables, PKBDNLSTABLES kbdNlsTables)
 {
-    if(kbdTables == 0) throw gcnew ArgumentNullException("kbdTables");
+    if(kbdTables == NULL) throw gcnew ArgumentNullException("kbdTables");
     this->kbdTables = kbdTables;
     this->kbdNlsTables = kbdNlsTables;
 }
@@ -28,11 +28,22 @@ KeyboardDescriptor^ KeyboardDescriptor::LoadKeyboard(String^ dllPath){
         if(kbdNlsLayerDescriptor!= IntPtr::Zero) 
             kbdNlsLayerDescriptorDelegate=(KbdNlsLayerDescriptor^)Marshal::GetDelegateForFunctionPointer(kbdNlsLayerDescriptor, KbdNlsLayerDescriptor::typeid);
         PKBDTABLES kbdTables = kbdLayerDescriptorDelegate();
-        PKBDNLSTABLES kbdNlsTables = 0;
+        PKBDNLSTABLES kbdNlsTables = NULL;
         if(kbdNlsLayerDescriptorDelegate!=nullptr)
             kbdNlsTables = kbdNlsLayerDescriptorDelegate();
         return gcnew KeyboardDescriptor(kbdTables, kbdNlsTables);
     }finally{
         delete dllModule;
     }
+}
+
+KbdTables^ KeyboardDescriptor::KbdTables::get(){
+    if(kbdTablesWrapper == nullptr) kbdTablesWrapper = gcnew Dzonny::XmlKeyboard::Interop::KbdTables(kbdTables);
+    return kbdTablesWrapper;
+}
+
+KbdNlsTables^ KeyboardDescriptor::KbdNlsTables::get(){
+    if(kbdNlsTables == NULL) return nullptr;
+    if(kbdNlsTablesWrapper == nullptr) kbdNlsTablesWrapper = gcnew Dzonny::XmlKeyboard::Interop::KbdNlsTables(kbdNlsTables);
+    return kbdNlsTablesWrapper;
 }
