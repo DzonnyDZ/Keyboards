@@ -5924,13 +5924,7 @@ A strongly-typed resource class, for looking up localized strings, formatting th
 		<para>If the function cannot find the module, the function fails. When specifying a path, be sure to use backslashes (\), not forward slashes (/). For more information about paths, see Naming a File or Directory.</para>
 		<para>If the string specifies a module name without a path and the file name extension is omitted, the function appends the default library extension .dll to the module name. To prevent the function from appending .dll to the module name, include a trailing point character (.) in the module name string.</para></param>
 	<returns>If the function succeeds, the return value is a handle to the module. If the function fails, the return value is NULL.</returns>
-</member><member name="M:Tools.API.Common.GetProcAddress(System.Int32,System.String)">
-	<summary>Retrieves the address of an exported function or variable from the specified dynamic-link library (DLL).</summary>
-	<param name="hModule"><para>A handle to the DLL module that contains the function or variable. The LoadLibrary, LoadLibraryEx, or GetModuleHandle function returns this handle.</para>
-		<para>The GetProcAddress function does not retrieve addresses from modules that were loaded using the LOAD_LIBRARY_AS_DATAFILE flag. For more information, see LoadLibraryEx.</para></param>
-	<param name="lpProcName">The function or variable name, or the function's ordinal value. If this parameter is an ordinal value, it must be in the low-order word; the high-order word must be zero.</param>
-	<returns>If the function succeeds, the return value is the address of the exported function or variable. If the function fails, the return value is NULL. </returns>
-</member><member name="M:Tools.API.Common.FreeLibrary(System.Int32)">
+</member><member name="M:Tools.API.Common.FreeLibrary(System.IntPtr)">
 	<summary>Frees the loaded dynamic-link library (DLL) module and, if necessary, decrements its reference count. When the reference count reaches zero, the module is unloaded from the address space of the calling process and the handle is no longer valid.</summary>
 	<param name="hLibModule">A handle to the loaded library module. The LoadLibrary, LoadLibraryExGetModuleHandle, or GetModuleHandleEx function returns this handle.</param>
 	<returns>If the function succeeds, the return value is nonzero. If the function fails, the return value is zero.</returns>

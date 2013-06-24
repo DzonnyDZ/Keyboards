@@ -4,6 +4,7 @@ Imports Dzonny.XmlKeyboard.Interop
 Friend Module XubdTool
 
     Public Sub Main()
+        Console.OutputEncoding = System.Text.Encoding.Unicode
 
         If My.Application.CommandLineArgs.Count = 0 Then
             Console.WriteLine("Error - no parameters specified")
@@ -62,9 +63,13 @@ Friend Module XubdTool
     End Sub
 
 #Region "Print"
-    Private level As Integer = 0
+    Private levelIndicator As String
     Private Sub Cv(text As String, ParamArray params As Object())
-        Console.WriteLine(New String(CChar(vbTab), level) & String.Format(text, params))
+        If params Is Nothing OrElse params.Length = 0 Then
+            Console.WriteLine(levelIndicator & text)
+        Else
+            Console.WriteLine(levelIndicator & String.Format(text, params))
+        End If
     End Sub
     Private Sub Print(dll$)
         Using info = KeyboardDescriptor.LoadKeyboard(dll)
@@ -326,11 +331,11 @@ Friend Module XubdTool
     Private Class RaisedLevel : Implements IDisposable
         Private disposed As Boolean
         Public Sub New()
-            level += 1
+            levelIndicator &= vbTab
         End Sub
         Private Sub Dispose() Implements IDisposable.Dispose
             If Not disposed Then
-                level -= 1
+                levelIndicator = levelIndicator.Substring(0, levelIndicator.Length - 1)
                 disposed = True
             End If
         End Sub

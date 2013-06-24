@@ -48,14 +48,15 @@
     <PropertyGroup Label="Configuration" Condition="$(Configuration.StartsWith('Debug'))">
         <TargetVersion>Win7</TargetVersion>
         <UseDebugLibraries>True</UseDebugLibraries>
-        <CLRSupport>Pure</CLRSupport>
+        <CLRSupport Condition="!$(Configuration.Contains('WoW64'))">Pure</CLRSupport>
+        <CLRSupport Condition="$(Configuration.Contains('WoW64'))">True</CLRSupport>
     </PropertyGroup>
     <PropertyGroup Label="Configuration" Condition="$(Configuration.StartsWith('Release'))">
         <TargetVersion>Win7</TargetVersion>
         <UseDebugLibraries>False</UseDebugLibraries>
-        <CLRSupport>Pure</CLRSupport>
+        <CLRSupport Condition="!$(Configuration.Contains('WoW64'))">Pure</CLRSupport>
+        <CLRSupport Condition="$(Configuration.Contains('WoW64'))">True</CLRSupport>
     </PropertyGroup>
-
     <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
     <PropertyGroup>
         <OutDir>bin\$(ConfigurationName)\$(Platform)\</OutDir>
@@ -73,19 +74,13 @@
     <ItemDefinitionGroup>
         <ResourceCompile>
             <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\inc</AdditionalIncludeDirectories>
-            <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
         </ResourceCompile>
         <ClCompile>
             <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\inc</AdditionalIncludeDirectories>
-            <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
         </ClCompile>
         <Midl>
             <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\inc</AdditionalIncludeDirectories>
-            <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
         </Midl>
-        <Link>
-            <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
-        </Link>
     </ItemDefinitionGroup>
     <ItemDefinitionGroup>
         <Link>
@@ -101,6 +96,8 @@
             </CallingConvention>
             <XMLDocumentationFileName>$(TargetPath).xml</XMLDocumentationFileName>
             <PrecompiledHeader>NotUsing</PrecompiledHeader>
+            <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug-WoW64|Win32'">BUILD_WOW6432;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+            <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release-WoW64|Win32'">BUILD_WOW6432;%(PreprocessorDefinitions)</PreprocessorDefinitions>
         </ClCompile>
     </ItemDefinitionGroup>
     <ItemGroup>

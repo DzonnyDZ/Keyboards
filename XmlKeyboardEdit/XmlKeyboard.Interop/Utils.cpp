@@ -9,7 +9,7 @@ namespace Dzonny { namespace XmlKeyboard { namespace Interop {
 #pragma region IsZero
     template <>
     bool IsZero<VK_TO_WCHAR_TABLE>(PVK_TO_WCHAR_TABLE item){
-        return item == NULL || (item->pVkToWchars == NULL && item->nModifications && item->cbSize);
+        return item == NULL || (item->pVkToWchars == NULL && item->nModifications == 0 && item->cbSize == 0);
     }
 
     template <>
@@ -39,7 +39,7 @@ namespace Dzonny { namespace XmlKeyboard { namespace Interop {
 
     template<>
     bool IsZero<VK_TO_WCHARS1>(PVK_TO_WCHARS1 item){
-        return item == NULL || (item->Attributes == 0 && item->VirtualKey == 0 && item->wch == NULL);
+        return item == NULL || (item->Attributes == 0 && item->VirtualKey == 0 && item->wch[0] == 0);
     }
 #pragma endregion
 

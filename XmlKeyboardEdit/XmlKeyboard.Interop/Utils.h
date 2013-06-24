@@ -84,6 +84,28 @@ namespace Dzonny { namespace XmlKeyboard { namespace Interop {
         return ret->ToArray();
     }
 
+    /// <summary>
+    /// Initializes managed array from unmanaged array (pointers) until zero element is reached.
+    /// Passes additional parameter to newly created managed object.
+    /// Allows size of unmanaged object to bi different then size of type passed.
+    /// </summary>
+    /// <typeparam name="TUnmanaged">Type of items in unmanaged array</typeparam>
+    /// <typeparam name="TManaged">Type of items in managed array</typeparam>
+    /// <typeparam name="TP">Type of object to be passed to managed type</typeparam>
+    /// <param name="pointer">Pointer to pointer to first item</param>
+    /// <param name="pointerSize">Size (in bytes) of each object in array pointed by <paramref name="pointer"/></param>
+    /// <param name="p">A parameter to be passed to managed object</param>
+    /// <returns>Array of managed objects initialized by unmanaged objects</returns>
+    /// <remarks>Specialized template instance of <see cref="IsZero&lt;T>"/> for type <typeparamref name="TUnmanaged"/> must be defined for this function for work</remarks>
+    template <typename TUnmanaged, typename TManaged, typename TP>
+    cli::array<TManaged^>^ InitArrayUntilZero(TUnmanaged* pointer, BYTE pointerSize, TP p){
+        List<TManaged^>^ ret = gcnew List<TManaged^>();
+        for(int i = 0; !IsZero<TUnmanaged>((TUnmanaged*)((BYTE*)pointer + i * pointerSize)); i++){
+            ret->Add(gcnew TManaged((TUnmanaged*)((BYTE*)pointer + i * pointerSize), p));
+        }
+        return ret->ToArray();
+    }
+
 #pragma region IsZero
     /// <summary>When implemented for given type <typeparamref name="T"/> gets value indicating if instance of that type represents zero value</summary>
     /// <typeparam name="T">Type of item to detect if it is zero</typeparam>

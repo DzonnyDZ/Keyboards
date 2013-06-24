@@ -11,6 +11,6 @@ Vks2WChars::Vks2WChars(PVK_TO_WCHAR_TABLE vk2WChar)
 }
 
 cli::array<Vk2WChar^>^ Vks2WChars::Mappings::get(){
-    INITARRAY(mappings, vk2WChar->pVkToWchars, Vk2WChar^, (InitArrayUntilZero<VK_TO_WCHARS1, Vk2WChar, BYTE>(vk2WChar->pVkToWchars, vk2WChar->nModifications)));
+    INITARRAY(mappings, vk2WChar->pVkToWchars, Vk2WChar^, (InitArrayUntilZero<VK_TO_WCHARS1, Vk2WChar, BYTE>(vk2WChar->pVkToWchars, vk2WChar->cbSize, vk2WChar->nModifications)));
     return mappings;
 }
