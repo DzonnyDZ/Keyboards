@@ -11,21 +11,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="kbdfr.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="KeyboardDescriptor.h" />
-    <ClInclude Include="Stdafx.h" />
-    <ClInclude Include="kbdfr.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="KeyboardDescriptor.h" />
     <ClInclude Include="Stdafx.h" />
     <ClInclude Include="KeyboardDescriptor.h" />
     <ClInclude Include="Stdafx.h" />
-    <ClInclude Include="kbdfr.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="KeyboardDescriptor.h" />
     <ClInclude Include="Stdafx.h" />
     <ClInclude Include="kbdfr.h">
@@ -88,6 +77,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="NlsFParam.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyboardDescriptor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

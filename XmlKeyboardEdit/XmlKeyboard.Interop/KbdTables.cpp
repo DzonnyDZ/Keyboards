@@ -15,7 +15,14 @@ Modifiers^ KbdTables::Modifiers::get(){
     return modifiers;
 } 
 cli::array<Vks2WChars^>^ KbdTables::Vks2WChars::get(){
-    INITARRAY(vks2WChars, kbdTables->pVkToWcharTable, Dzonny::XmlKeyboard::Interop::Vks2WChars^, (InitArrayUntilZero<VK_TO_WCHAR_TABLE, Dzonny::XmlKeyboard::Interop::Vks2WChars>(kbdTables->pVkToWcharTable)));
+    //INITARRAY(vks2WChars, kbdTables->pVkToWcharTable, Dzonny::XmlKeyboard::Interop::Vks2WChars^, (InitArrayUntilZero<VK_TO_WCHAR_TABLE, Dzonny::XmlKeyboard::Interop::Vks2WChars>(kbdTables->pVkToWcharTable)));
+    if((vks2WChars) == nullptr){ 
+        if((kbdTables->pVkToWcharTable) == NULL){ 
+            vks2WChars = gcnew cli::array<Dzonny::XmlKeyboard::Interop::Vks2WChars^>(0); 
+        } else { 
+            vks2WChars = ((InitArrayUntilZero<VK_TO_WCHAR_TABLE, Dzonny::XmlKeyboard::Interop::Vks2WChars>(kbdTables->pVkToWcharTable))); 
+        }  
+    }
     return vks2WChars;
 }
 cli::array<DeadKey^>^ KbdTables::DeadKeys::get(){

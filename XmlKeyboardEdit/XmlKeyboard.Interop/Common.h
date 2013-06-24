@@ -4,11 +4,11 @@
 /// <param name="type">Type of managed array elements</param>
 /// <param name="init">An expression to initialize <paramref name="target"/> when <paramref name="source"/> is not null.</param>
 #define INITARRAY(target, source, type, init) \
-    if(target == nullptr){ \
-        if(source == NULL){ \
+    if((target) == nullptr){ \
+        if((source) == NULL){ \
             target = gcnew cli::array<type>(0); \
         } else { \
-            target = init; \
+            target = (init); \
         } \
     }
 
