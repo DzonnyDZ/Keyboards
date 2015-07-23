@@ -3,4 +3,10 @@ ipch
 *.sdf
 *.suo
 *.opensdf
+</Value></Property><Property><Name>svn:ignore</Name><Value>Debug
+ipch
+*.sdf
+*.suo
+*.opensdf
+.vs
 </Value></Property></Properties></ItemProperties>

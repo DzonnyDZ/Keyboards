@@ -60,8 +60,15 @@ namespace Dzonny { namespace XmlKeyboard { namespace Interop {
         property KbdVersion KbdVersion{Dzonny::XmlKeyboard::Interop::KbdVersion get();}
         /// <summary>Gets ligatures definition</summary>
         property cli::array<Ligature^>^ Ligatures{cli::array<Ligature^>^ get();}
-        /// <summary>Gets keboad type (if specified)</summary>
-        property Nullable<DWORD> Type{Nullable<DWORD> get();}
+        /// <summary>Gets keyboard type (if specified)</summary>
+        property Nullable<DWORD> Type {Nullable<DWORD> get();}
+        /// <summary>Gets value of the <see cref="Type"/> property</summary>
+        /// <remarks>
+        /// This method is just workaround to a bug in Roslyn that causes that VB and C# cannot consume the <see cref="Type"/> property.
+        /// The member will be removed as soon as the Roslyn bug is fixed.
+        /// </remarks>
+        [Obsolete("This method is only workaround to Roslyn bug causing that C# and VB cannot consume the Type property. The method will be removed as soon as the Roslyn bug is fixed.")]
+        Nullable<UInt32> GetTypeValue();
         /// <summary>Gets keyboard sub-type  (if specified)</summary>
         property Nullable<WORD> SubType{Nullable<WORD> get();}
         /// <summary>Gets keyboard OEM id  (if specified)</summary>

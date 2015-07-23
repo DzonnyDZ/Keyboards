@@ -61,6 +61,11 @@ Nullable<DWORD> KbdTables::Type::get(){
         return kbdTables->dwType;
     return Nullable<DWORD>();
 }
+
+Nullable<UInt32> KbdTables::GetTypeValue() {
+    return Type.HasValue ? (Nullable<UInt32>)(UInt32)Type.Value : Nullable<UInt32>();
+}
+
 Nullable<WORD> KbdTables::SubType::get(){
     if(KbdVersion >= Dzonny::XmlKeyboard::Interop::KbdVersion::one)
         return HIWORD(kbdTables->dwSubType);

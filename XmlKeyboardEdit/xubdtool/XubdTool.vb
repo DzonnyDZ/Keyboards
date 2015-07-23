@@ -133,7 +133,7 @@ Friend Module XubdTool
         Using rl As New RaisedLevel
             Print(kbdTables.Ligatures)
         End Using
-        Cv("Keyboard type {0}", kbdTables.Type)
+        Cv("Keyboard type {0}", kbdTables.GetTypeValue())
         Cv("Keyboard sub-type {0}", kbdTables.SubType)
         Cv("OEM ID{0}", kbdTables.OemId)
     End Sub
