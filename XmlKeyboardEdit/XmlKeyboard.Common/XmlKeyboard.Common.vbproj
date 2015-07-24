@@ -7,7 +7,7 @@
     <ProjectGuid>{BF301D09-70D3-4058-8035-83FF1F32B9B3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Dzonny.XmlKeyboard</RootNamespace>
-    <AssemblyName>XmlKeyboard.Common</AssemblyName>
+    <AssemblyName>Dzonny.XmlKeyboard</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -18,7 +18,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>XmlKeyboard.Common.xml</DocumentationFile>
+    <DocumentationFile>Dzonny.XmlKeyboard.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
@@ -28,7 +28,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>XmlKeyboard.Common.xml</DocumentationFile>
+    <DocumentationFile>Dzonny.XmlKeyboard.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -53,6 +53,9 @@
     <Reference Include="Tools.Win">
       <HintPath>..\lib\Tools.Win.dll</HintPath>
     </Reference>
+    <Compile Include="..\GlobalAssemblyInfo.vb">
+      <Link>My Project\GlobalAssemblyInfo.vb</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -82,7 +85,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="NativeFunctions.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
