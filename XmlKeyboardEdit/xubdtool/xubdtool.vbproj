@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{7A63A523-1297-49E6-BB1B-39D4A6892F38}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>Dzonny.XmlKeyboard.XubdTool</StartupObject>
-    <RootNamespace>Dzonny.XmlKeyboard</RootNamespace>
+    <StartupObject>Dzonny.XmlKeyboard.XubdTool.XubdTool</StartupObject>
+    <RootNamespace>Dzonny.XmlKeyboard.XubdTool</RootNamespace>
     <AssemblyName>xubdtool</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Console</MyType>
@@ -72,6 +72,9 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\GlobalAssemblyInfo.vb">
+      <Link>My Project\GlobalAssemblyInfo.vb</Link>
+    </Compile>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -134,9 +137,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XmlKeyboard.Common\XmlKeyboard.Common.vbproj">
+    <ProjectReference Include="..\XmlKeyboard\XmlKeyboard.vbproj">
       <Project>{bf301d09-70d3-4058-8035-83ff1f32b9b3}</Project>
-      <Name>XmlKeyboard.Common</Name>
+      <Name>XmlKeyboard</Name>
     </ProjectReference>
     <ProjectReference Include="..\XmlKeyboard.Interop\XmlKeyboard.Interop.vcxproj">
       <Project>{59e4f833-070c-48c6-8de5-560eb0849859}</Project>
