@@ -3,14 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "XmlKeyboardEdit", "XmlKeyboardEdit\XmlKeyboardEdit.vbproj", "{1BE6BF0B-8101-43FF-BD09-B0E88D1489CA}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WinKeyU", "WinKEyU\WinKeyU.vbproj", "{1BE6BF0B-8101-43FF-BD09-B0E88D1489CA}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "xubdtool", "xubdtool\xubdtool.vbproj", "{7A63A523-1297-49E6-BB1B-39D4A6892F38}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "XmlKeyboard.Common", "XmlKeyboard.Common\XmlKeyboard.Common.vbproj", "{BF301D09-70D3-4058-8035-83FF1F32B9B3}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "XmlKeyboard", "XmlKeyboard\XmlKeyboard.vbproj", "{BF301D09-70D3-4058-8035-83FF1F32B9B3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DEB655B8-B581-4CFE-BC3D-8C90588EEAC2}"
 	ProjectSection(SolutionItems) = preProject
+		GlobalAssemblyInfo.cpp = GlobalAssemblyInfo.cpp
+		GlobalAssemblyInfo.vb = GlobalAssemblyInfo.vb
 		Keyboard.xsd = Keyboard.xsd
 	EndProjectSection
 EndProject

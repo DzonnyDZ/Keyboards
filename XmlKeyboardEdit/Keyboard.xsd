@@ -37,7 +37,7 @@
                 <xs:element name="modifiers" minOccurs="1" maxOccurs="1" type="Vk2Modifier">
                     <xs:annotation>
                         <xs:documentation>
-                            Defines meodifier keys usch as Ctrl, Shift and Alt mapping to Virtual Keys.
+                            Defines modifier keys such as Ctrl, Shift and Alt mapping to Virtual Keys.
                             This element is used to initialize the pVkToBit member of MODIFIERS structure.
                         </xs:documentation>
                     </xs:annotation>
@@ -67,7 +67,7 @@
                 <xs:element name="chars" minOccurs="1" maxOccurs="1" type="Vk2Char">
                     <xs:annotation>
                         <xs:documentation>
-                            Specifies associations between vierual keys and characters.
+                            Specifies associations between virtual keys and characters.
                             This element is used to initialize the pVkToWcharTable (aVkToWcharTable) member of KbdLayer (KBDTABLES) structure.
                         </xs:documentation>
                     </xs:annotation>
