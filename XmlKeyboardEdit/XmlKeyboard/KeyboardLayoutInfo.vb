@@ -1,9 +1,10 @@
-﻿Imports System.Runtime.InteropServices
-Imports System.ComponentModel
-Imports Microsoft.Win32
+﻿Imports Microsoft.Win32
 Imports Tools.InteropT
 
+''' <summary>Provides information about installed keyboard layout from registry</summary>
 Public Class KeyboardLayoutInfo
+    ''' <summary>Gets all installed keyboard layouts from registry</summary>
+    ''' <returns>All installed keyboard layouts from registry</returns>
     Public Shared Iterator Function GetInstalledLayouts() As IEnumerable(Of KeyboardLayoutInfo)
         Using hklm = Microsoft.Win32.RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, Microsoft.Win32.RegistryView.Default)
             Using keyboardLayouts = hklm.OpenSubKey("SYSTEM\CurrentControlSet\Control\Keyboard Layouts")
@@ -18,36 +19,28 @@ Public Class KeyboardLayoutInfo
         End Using
     End Function
 
-    Private ReadOnly _layoutFile As String
-    Private ReadOnly _layoutText As String
     Private _layoutDisplayName As String
-    Private ReadOnly _layoutId As String
     Private _customLanguageDisplayName As String
-    Private ReadOnly _customLanguageName As String
-    Private ReadOnly _layoutProductCode As String
 
+    ''' <summary>CTor - creates a new instance of the <see cref="KeyboardLayoutInfo"/> class by reading given registry key</summary>
+    ''' <param name="key">A registry key to read information about the layout from</param>
     Private Sub New(key As RegistryKey)
-        _layoutFile = key.GetValue("Layout File")
-        _layoutText = key.GetValue("Layout Text")
+        LayoutFile = key.GetValue("Layout File")
+        LayoutText = key.GetValue("Layout Text")
         _layoutDisplayName = key.GetValue("Layout Display Name")
-        _layoutId = key.GetValue("Layout Id")
+        LayoutId = key.GetValue("Layout Id")
         _customLanguageDisplayName = key.GetValue("Custom Language Display Name")
-        _customLanguageName = key.GetValue("Custom Language Name")
-        _layoutProductCode = key.GetValue("Layout Product Code")
+        CustomLanguageName = key.GetValue("Custom Language Name")
+        LayoutProductCode = key.GetValue("Layout Product Code")
     End Sub
 
+    ''' <summary>Gets name (without path) of DLL file containing the layout</summary>
     Public ReadOnly Property LayoutFile$
-        Get
-            Return _layoutFile
-        End Get
-    End Property
 
+    ''' <summary>Gets short name of the layout</summary>
     Public ReadOnly Property LayoutText$
-        Get
-            Return _layoutText
-        End Get
-    End Property
 
+    ''' <summary>Gets (localized) layout display name</summary>
     Public ReadOnly Property LayoutDisplayName$
         Get
             If _layoutDisplayName.StartsWith("@") Then
@@ -59,12 +52,10 @@ Public Class KeyboardLayoutInfo
         End Get
     End Property
 
+    ''' <summary>Gets ID of the layout (if specified)</summary>
     Public ReadOnly Property LayoutId$
-        Get
-            Return _layoutId
-        End Get
-    End Property
 
+    ''' <summary>In case of custom layout gets custom layout language display name</summary>
     Public ReadOnly Property CustomLanguageDisplayName$
         Get
             If _customLanguageDisplayName.StartsWith("@") Then
@@ -76,37 +67,33 @@ Public Class KeyboardLayoutInfo
         End Get
     End Property
 
+    ''' <summary>In case of custom layout gets custom layout language name</summary>
     Public ReadOnly Property CustomLanguageName$
-        Get
-            Return _customLanguageName
-        End Get
-    End Property
 
+    ''' <summary>In case of custom layout gets custom layout product code</summary>
     Public ReadOnly Property LayoutProductCode$
-        Get
-            Return _layoutProductCode
-        End Get
-    End Property
 
-    Private Shared Function ExpandResource(layoutDisplayName As String) As String
-        If layoutDisplayName.Length < 2 OrElse Not layoutDisplayName.Contains(","c) Then Return layoutDisplayName
+    ''' <summary>Expands resource value</summary>
+    ''' <param name="value">String, or expandable string to be loaded form resource</param>
+    ''' <returns>In case <paramref name="value"/> represents expandable resource identifier, returns value of that resource, otherwise returns <paramref name="value"/>.</returns>
+    Private Shared Function ExpandResource(value As String) As String
+        If value.Length < 2 OrElse Not value.Contains(","c) Then Return value
         Dim fileName$
         Dim resourceId$
-        If layoutDisplayName(1) = """"c Then
-            fileName = layoutDisplayName.Substring(2, layoutDisplayName.IndexOf(""""c, 2) - 2)
-            If layoutDisplayName(fileName.Length + 5) <> ","c Then Return layoutDisplayName
-            resourceId = layoutDisplayName.Substring(fileName.Length + 6)
+        If value(1) = """"c Then
+            fileName = value.Substring(2, value.IndexOf(""""c, 2) - 2)
+            If value(fileName.Length + 5) <> ","c Then Return value
+            resourceId = value.Substring(fileName.Length + 6)
         Else
-            fileName = layoutDisplayName.Substring(1, layoutDisplayName.IndexOf(","c) - 1)
-            resourceId = layoutDisplayName.Substring(layoutDisplayName.IndexOf(","c) + 1)
+            fileName = value.Substring(1, value.IndexOf(","c) - 1)
+            resourceId = value.Substring(value.IndexOf(","c) + 1)
         End If
         fileName = Environment.ExpandEnvironmentVariables(fileName)
         Dim id As Integer
-        If Not Integer.TryParse(resourceId, Globalization.NumberStyles.Integer, System.Globalization.CultureInfo.InvariantCulture, id) Then Return layoutDisplayName
+        If Not Integer.TryParse(resourceId, Globalization.NumberStyles.Integer, System.Globalization.CultureInfo.InvariantCulture, id) Then Return value
         Using dll = UnmanagedModule.LoadLibraryAsDataFile(fileName)
             Dim ret = dll.LoadString(Math.Abs(id))
             Return ret
         End Using
-    End Function
-
-End Class
+    End Function   
+End Class        
