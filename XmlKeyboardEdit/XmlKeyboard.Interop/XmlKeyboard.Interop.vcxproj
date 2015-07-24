@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug-WoW64|Win32">
-      <Configuration>Debug-WoW64</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
     <ProjectConfiguration Include="Release-WoW64|Win32">
       <Configuration>Release-WoW64</Configuration>
       <Platform>Win32</Platform>
@@ -27,15 +23,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="PropertySheets">
-    <DriverType />
     <PlatformToolset>v140</PlatformToolset>
     <ConfigurationType>DynamicLibrary</ConfigurationType>
   </PropertyGroup>
   <PropertyGroup Label="Globals">
     <Configuration>Debug</Configuration>
     <Platform Condition="'$(Platform)' == ''">Win32</Platform>
-    <DebuggerFlavor Condition="'$(PlatformToolset)' == 'WindowsKernelModeDriver8.0'">DbgengKernelDebugger</DebuggerFlavor>
-    <DebuggerFlavor Condition="'$(PlatformToolset)' == 'WindowsUserModeDriver8.0'">DbgengRemoteDebugger</DebuggerFlavor>
     <SampleGuid>{EB375B69-5368-44D0-9A08-DCD1E627EF04}</SampleGuid>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
   </PropertyGroup>
@@ -44,32 +37,40 @@
     <ProjectGuid>{59E4F833-070C-48C6-8DE5-560EB0849859}</ProjectGuid>
     <RootNamespace>$(MSBuildProjectName)</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <TargetVersion>Win7</TargetVersion>
+    <CLRSupport>Pure</CLRSupport>
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="$(Configuration.StartsWith('Debug'))">
-    <TargetVersion>Win7</TargetVersion>
     <UseDebugLibraries>True</UseDebugLibraries>
-    <CLRSupport Condition="!$(Configuration.Contains('WoW64'))">true</CLRSupport>
-    <CLRSupport Condition="$(Configuration.Contains('WoW64'))">True</CLRSupport>
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="$(Configuration.StartsWith('Release'))">
-    <TargetVersion>Win7</TargetVersion>
     <UseDebugLibraries>False</UseDebugLibraries>
-    <CLRSupport Condition="!$(Configuration.Contains('WoW64'))">Pure</CLRSupport>
-    <CLRSupport Condition="$(Configuration.Contains('WoW64'))">True</CLRSupport>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <PropertyGroup>
-    <OutDir>bin\$(ConfigurationName)\$(Platform)\</OutDir>
+    <OutDir>bin\$(Configuration)\$(Platform)\</OutDir>
   </PropertyGroup>
   <ImportGroup Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
   </ImportGroup>
-  <ItemGroup Label="WrappedTaskItems" />
   <PropertyGroup>
     <TargetName>$(ProjectName)</TargetName>
+    <IntDir>obj\$(Configuration)\$(Platform)\</IntDir>
   </PropertyGroup>
-  <PropertyGroup>
-    <IntDir>obj\$(ConfigurationName)\$(Platform)\</IntDir>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <EnableManagedIncrementalBuild>true</EnableManagedIncrementalBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <EnableManagedIncrementalBuild>true</EnableManagedIncrementalBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-WoW64|Win32'">
+    <EnableManagedIncrementalBuild>true</EnableManagedIncrementalBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <EnableManagedIncrementalBuild>true</EnableManagedIncrementalBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <EnableManagedIncrementalBuild>true</EnableManagedIncrementalBuild>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ResourceCompile>
@@ -90,16 +91,13 @@
       </ModuleDefinitionFile>
     </Link>
     <ClCompile>
-      <ExceptionHandling>
-      </ExceptionHandling>
-      <CallingConvention>
-      </CallingConvention>
-      <XMLDocumentationFileName>$(TargetPath).xml</XMLDocumentationFileName>
+      <XMLDocumentationFileName>
+      </XMLDocumentationFileName>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug-WoW64|Win32'">BUILD_WOW6432;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release-WoW64|Win32'">BUILD_WOW6432;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_X86_;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">_X64_;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Platform)'=='Win32'">_X86_;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Platform)'=='x64'">_AMD64_;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -124,10 +122,6 @@
   <ItemGroup>
     <Inf Exclude="@(Inf)" Include="*.inf" />
     <FilesToPackage Include="$(TargetPath)" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Exclude="@(None)" Include="*.txt;*.htm;*.html" />
-    <None Exclude="@(None)" Include="*.ico;*.cur;*.bmp;*.dlg;*.rct;*.gif;*.jpg;*.jpeg;*.wav;*.jpe;*.tiff;*.tif;*.png;*.rc2" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h" />
