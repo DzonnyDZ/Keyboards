@@ -64,9 +64,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.Dzonny.XmlKeyboard.My.MySettings
+        Friend ReadOnly Property Settings() As Global.Dzonny.XmlKeyboard.XubdTool.My.MySettings
             Get
-                Return Global.Dzonny.XmlKeyboard.My.MySettings.Default
+                Return Global.Dzonny.XmlKeyboard.XubdTool.My.MySettings.Default
             End Get
         End Property
     End Module
