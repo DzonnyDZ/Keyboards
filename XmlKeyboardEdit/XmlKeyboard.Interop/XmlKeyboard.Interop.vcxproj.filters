@@ -135,5 +135,8 @@
     <ClCompile Include="NlsFParam.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\GlobalAssemblyInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

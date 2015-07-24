@@ -101,6 +101,7 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\GlobalAssemblyInfo.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="DeadKey.cpp" />
     <ClCompile Include="DeadKeyName.cpp" />
