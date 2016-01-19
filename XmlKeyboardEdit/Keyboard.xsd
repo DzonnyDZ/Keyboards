@@ -6634,10 +6634,12 @@
         </xs:attribute>
     </xs:complexType>
 
-    <xs:simpleType name="Version"><xs:restriction base="xs:string">
-        <xs:annotation>
-            <xs:documentation>4-part version number (major.minor.build.revision)</xs:documentation>
-        </xs:annotation>
-        <xs:pattern value="[0-9]+(\.[0-9]+){3}"/>
-    </xs:restriction></xs:simpleType>
+    <xs:simpleType name="Version">
+        <xs:restriction base="xs:string">
+            <xs:annotation>
+                <xs:documentation>4-part version number (major.minor.build.revision)</xs:documentation>
+            </xs:annotation>
+            <xs:pattern value="[0-9]+(\.[0-9]+){3}"/>
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>

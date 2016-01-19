@@ -2,6 +2,7 @@
 Imports Tools.InteropT
 
 ''' <summary>Provides information about installed keyboard layout from registry</summary>
+''' <remarks>This class is not part of XML keyboard definition</remarks>
 Public Class KeyboardLayoutInfo
     ''' <summary>Gets all installed keyboard layouts from registry</summary>
     ''' <returns>All installed keyboard layouts from registry</returns>

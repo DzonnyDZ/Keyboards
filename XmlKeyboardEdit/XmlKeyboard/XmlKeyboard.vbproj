@@ -44,6 +44,12 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DeadKey.vb" />
+    <Compile Include="ModifierCombination.vb" />
+    <Compile Include="NlsLayer.vb" />
+    <Compile Include="ScanToVK.vb" />
+    <Compile Include="VK2Char.vb" />
+    <Compile Include="VK2Modifier.vb" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -69,7 +75,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IXmlKeyboardObject.vb" />
+    <Compile Include="Keyboard.vb" />
     <Compile Include="KeyboardLayoutInfo.vb" />
+    <Compile Include="KeyboardOptions.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -104,6 +113,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="!XML boilerplate.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
