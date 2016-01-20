@@ -1,8 +1,55 @@
-﻿Imports <xmlns:http://dzonny.cz/Keyboard.xsd>
+﻿Imports System.Runtime.InteropServices
+Imports System.Text
+Imports <xmlns:http://dzonny.cz/Keyboard.xsd>
 
-Public Enum ScanCodeVariable
+''' <summary>Represents possible name of Scan Code Variable</summary>
+Public Structure ScanCodeVariable
+    Public Sub New(t As ScanCodeVariableT, x As ScanCodeVariableX, y As ScanCodeVariableY)
+        Me.T = t
+        Me.X = x
+        Me.Y = y
+    End Sub
 
-End Enum
+    Public Property T As ScanCodeVariableT
+    Public Property X As ScanCodeVariableX
+    Public Property Y As ScanCodeVariableY
+
+    Public Overrides Function ToString() As String
+        Return $"{T} {X} {Y}"
+    End Function
+    Public Shared Function TryParse(string$, <Out> ByRef variable As ScanCodeVariable) As Boolean
+        If [string] Is Nothing Then Return False
+        Dim T As ScanCodeVariableT
+        Dim X As ScanCodeVariableX
+        Dim Y As ScanCodeVariableY
+        Dim en = [string].GetEnumerator
+        If Not en.MoveNext Then Return False
+
+        While Char.IsWhiteSpace(en.Current) AndAlso en.MoveNext : End While
+        Dim b As New StringBuilder
+        While Not Char.IsWhiteSpace(en.Current) AndAlso en.MoveNext
+            b.Append(en.Current)
+        End While
+        If Not [Enum].TryParse(b.ToString, T) Then Return False
+
+        While Char.IsWhiteSpace(en.Current) AndAlso en.MoveNext : End While
+        b.Clear()
+        While Not Char.IsWhiteSpace(en.Current) AndAlso en.MoveNext
+            b.Append(en.Current)
+        End While
+        If Not [Enum].TryParse(b.ToString, X) Then Return False
+
+        While Char.IsWhiteSpace(en.Current) AndAlso en.MoveNext : End While
+        b.Clear()
+        While Not Char.IsWhiteSpace(en.Current) AndAlso en.MoveNext
+            b.Append(en.Current)
+        End While
+        If Not [Enum].TryParse(b.ToString, Y) Then Return False
+
+        variable = New ScanCodeVariable(T, X, Y)
+        Return True
+    End Function
+End Structure
 
 Public Enum VirtualKeyCode
 
