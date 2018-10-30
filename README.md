@@ -13,6 +13,7 @@ Similar principles can also be more or less intuitively used for other languages
 * Migrated from [CodePlex] (https://keyboards.codeplex.com/)
 * Download also from [dzonny.cz] (http://dzonny.cz/Software/Kl%C3%A1vesnice/tabid/60/language/cs-CZ/Default.aspx)
 * There is a [discussion group at Google Groups about the Russian keyboard] (https://groups.google.com/forum/#!forum/czrus)
+* Do you want custom keyboard layout made just for you? Contact [Doers] (http://doers.solutions/#contact)
 
 # [cs]
 Tento projekt seskupuje rozličná rozložení klávesnic pro Windows, především pak fonetická klávesnice postavené na českém rozložení.
@@ -30,3 +31,4 @@ A stejný princip lze použit více či méně intuitivně také pro jiné jazyk
 * Zmigrováno z [CodePlexu] (https://keyboards.codeplex.com/)
 * Stahujte také z [dzonny.cz] (http://dzonny.cz/Software/Kl%C3%A1vesnice/tabid/60/language/cs-CZ/Default.aspx)
 * Na Skupinách Google existuje [diskusní skupina k ruské fonetické klávesnici] (https://groups.google.com/forum/#!forum/czrus)
+* Chcete vlastní rosložení klávesnice na míru? Kontaktujte [Doers] (http://doers.solutions/#contact)
