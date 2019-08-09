@@ -1,0 +1,182 @@
+﻿<html lang="cs">
+<head>
+    <title>Jak psát</title>
+    <style>
+        @font-face {
+            font-family: flags;
+            src:url('http://www.babelstone.co.uk/Fonts/WOFF/BabelStoneFlags.woff2') format("woff2");
+        }
+        kbd{
+            border: solid thin #bbb;
+            background-color:#ccc;
+            display: inline-block;
+            border-radius: .5ex;
+            padding: 2px;
+        }
+        kbd span{            
+            margin: 2px;
+            padding: 2px;
+            display: inline-block;
+            border-radius: .5ex;
+        }
+        kbd > span{
+            border:solid thin #888;
+            background-color: #aaa;
+        }
+        kbd > span > span {
+            border:solid thin #666;
+            background-color: #888;
+        }
+
+        table{border-collapse: collapse; border-spacing: 0; width: 100%;}
+        table > caption{font-family: sans-serif; font-size: 300%;}
+        table > caption > p{font-size:50%; font-weight: bold;}
+        tbody > tr > td:first-child{font-size: 200%;}
+        tbody > tr:hover {background-color: #eee;}
+
+        :lang(bs)::before, tr:lang(bs) > :first-child::before{content: '🇧🇦 '; display: inline; font-family: flags; font-size:10pt; font-weight: normal; vertical-align: top;}
+        :lang(bs) :lang(bs)::before, tr:lang(bs)::before, :lang(bs-Arab)::before{content: none}
+    </style>
+</head>
+<body>
+
+<h1>Jak psát</h1>
+
+<table>
+    <caption>Arabština</caption>
+    <thead>
+        <tr>
+            <th scope="col">Znak</th>
+            <th scope="col">Název</th>
+            <th scope="scol">Kombinace</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td lang="ar">ا</td><td>alif</td>             <td><kbd>A</kbd></td></tr>
+        <tr><td lang="ar">ب</td><td>bā</td>               <td><kbd>B</kbd></td></tr>
+        <tr><td lang="ar">ت</td><td>tā</td>               <td><kbd>T</kbd></td></tr>
+        <tr><td lang="ar">ث</td><td>thā</td>              <td><kbd>C</kbd></td></tr>
+        <tr><td lang="ar">ج</td><td>džīm</td>             <td><kbd>Ž (6)</kbd>, <kbd>G</kbd></td></tr>
+        <tr><td lang="ar">ح</td><td>ḥā</td>               <td><kbd><span>Shift</span>+<span>H</span></kbd></td></tr>
+        <tr><td lang="ar">خ</td><td>chā</td>              <td><kbd>X</kbd></td></tr>
+        <tr><td lang="ar">د</td><td>dāl</td>              <td><kbd>D</kbd></td></tr>
+        <tr><td lang="ar">ذ</td><td>dzāl</td>             <td><kbd><span>Shift</span>+<span>C</span></kbd></td></tr>
+        <tr><td lang="ar">ر</td><td>rā</td>               <td><kbd>R</kbd></td></tr>
+        <tr><td lang="ar">ز</td><td>zajn</td>             <td><kbd>Z</kbd></td></tr>
+        <tr><td lang="ar">س</td><td>sīn</td>              <td><kbd>S</kbd></td></tr>
+        <tr><td lang="ar">ش</td><td>šīn</td>              <td><kbd>Š (3)</kbd></td></tr>
+        <tr><td lang="ar">ص</td><td>ṣād</td>              <td><kbd><span>Shift</span>+<span>S</span></kbd></td></tr>
+        <tr><td lang="ar">ض</td><td>ḍād</td>              <td><kbd><span>Shift</span>+<span>D</span></kbd></td></tr>
+        <tr><td lang="ar">ط</td><td>ṭā</td>               <td><kbd><span>Shift</span>+<span>T</span></kbd></td></tr>
+        <tr><td> lang="ar"ظ</td><td>ẓā</td>               <td><kbd><span>Shift</span>+<span>Z</span></kbd></td></tr>
+        <tr><td lang="ar">ع</td><td>ʿajn</td>             <td><kbd>I</kbd></td></tr>
+        <tr><td lang="ar">غ</td><td>ghajn</td>            <td><kbd><span>Shift</span>+<span>G</span></kbd></td></tr>
+        <tr><td lang="ar">ف</td><td>fā</td>               <td><kbd>F</kbd></td></tr>
+        <tr><td lang="ar">ق</td><td>qāf</td>              <td><kbd>Q</kbd></td></tr>
+        <tr><td lang="ar">ك</td><td>kāf</td>              <td><kbd>K</kbd></td></tr>
+        <tr><td lang="ar">ل</td><td>lām</td>              <td><kbd>L</kbd></td></tr>
+        <tr><td lang="ar">م</td><td>mīm</td>              <td><kbd>M</kbd></td></tr>
+        <tr><td lang="ar">ن</td><td>nūn</td>              <td><kbd>N</kbd></td></tr>
+        <tr><td lang="ar">ه</td><td>hā</td>               <td><kbd>H</kbd></td></tr>
+        <tr><td lang="ar">و</td><td>wāw</td>              <td><kbd>W</kbd>, <kbd>U</kbd></td></tr>
+        <tr><td lang="ar">ي</td><td>jā</td>               <td><kbd>J</kbd></td></tr>
+        <tr><td lang="ar">ء</td><td>hamza</td>            <td><kbd>¨ (')</kbd></td></tr>
+        <tr><td lang="ar">أ</td><td>alif s hamzou</td>    <td><kbd><span>Shift</span>+<span>A</span></kbd></td></tr>
+        <tr><td lang="ar">إ</td><td>alif s hamzou pod</td><td><kbd><span>AltGr</span>+<span>A</span></kbd></td></tr>
+        <tr><tdv>ؤ</td><td>wāw hamzou</td>       <td><kbd><span>Shift</span>+<span>W</span></kbd>, <kbd><span>Shift</span>+<span>U</span></kbd></td></tr>
+        <tr><td lang="ar">ئ</td><td>jā s hamzou</td>      <td><kbd><span>Shift</span>+<span>J</span></kbd></td></tr>
+        <tr><td lang="ar">آ</td><td>alif s maddou</td>    <td><kbd><span>Shift</span>+<span>I</span></kbd></td></tr>
+        <tr><td lang="ar">ٱ</td><td>alif s waslou</td>    <td><kbd><span>Shift</span>+<span>O</span></kbd></td></tr>
+        <tr><td lang="ar">ة</td><td>tā marbūṭa</td>       <td><kbd>O</kbd></td></tr>
+        <tr><td lang="ar">ی</td><td>alif maqṣūra</td>     <td><kbd><span>AltGr</span>+<span>J</span></kbd></td></tr>
+        <tr><td lang="ar">لا</td><td>lām + alif</td>       <td><kbd><span>L</span>, <span>A</span></kbd></td></tr>
+        <tr><td lang="ar">ّ </td><td>šadda</td>            <td><kbd>2 (Ě)</kbd></td></tr>
+        <tr><td lang="ar">َ </td><td>fatḥa</td>            <td><kbd>Á (8)</kbd></td></tr>
+        <tr><td lang="ar">ُ </td><td>ḍamma</td>            <td><kbd>Ú</kbd></td></tr>
+        <tr><td lang="ar">ِ </td><td>kasra</td>            <td><kbd>Í (9)</kbd></td></tr>
+        <tr><td lang="ar">ٰ </td><td>alif nad</td>         <td><kbd><span>AltGr</span>+<span>I</span></kbd></td></tr>
+        <tr><td lang="ar">ْ </td><td>sukūn</td>            <td><kbd>0 (É)</kbd></td></tr>
+        <tr><td lang="ar">ً </td><td>fathatan</td>         <td><kbd><span>AltGr</span>+<span>Ú</span></kbd></td></tr>
+        <tr><td lang="ar">ٌ </td><td>dammatan</td>         <td><kbd><span>AltGr</span>+<span>)(</span></td></kbd></tr>
+        <tr><td lang="ar">ٍ </td><td>kasratan</td>         <td><kbd><span>AltGr</span>+<span>Shift</span>+<span>Ú</span></kbd></td></tr>
+        <tr><td lang="ar">ٖ </td><td>alif pod</td>         <td><kbd><span>AltGr</span>+<span>Shift</span>+<span>A</span></kbd></td></tr>
+    </tbody>
+</table>
+
+<table>
+    <caption>
+        Bosenština (Arebica - Harfovica)
+        <p lang="bs">Bosanski</p>
+    </caption>
+    <thead>
+        <tr>
+            <th scope="col">Znak</th>
+            <th scope="col">Latinkou</th>
+            <th scope="col">Název*</th>
+            <th scope="col">Kombinace</th>
+            <th scope="col">Poznámka</th>
+        </tr>
+        <tr lang="bs">
+            <th scope="col">Slovo</th>
+            <th scope="col">Latinicom</th>
+            <th scope="col">Naziv*</th>
+            <th scope="col">Kombinacija</th>
+            <th scope="col">Napomena</th>
+        </tr>
+        <tbody>
+            <tr><td lang="bs-Arab">ا</td> <td>A</td>    <td>alif</td>                              <td><kbd>A</kbd></td></tr>
+            <tr><td lang="bs-Arab">آ</td> <td>A</td>    <td>alif s maddou</td>                     <td><kbd><span>Shift</span>+<span>I</span></kbd></td></tr>
+            <tr><td lang="bs-Arab">ب</td> <td>B</td>    <td>bā</td>                                <td><kbd>B</kbd></td></tr>
+            <tr><td lang="bs-Arab">ڄ</td> <td>C</td>    <td>džeh</td>                              <td><kbd><span><span>AltGr</span>+<span>Shift</span>+<span>O</span></span>, <span><span>Shift</span>+<span>H</span></span></kbd></td></tr>
+            <tr><td lang="bs-Arab">چ</td> <td>Č</td>    <td>čeh</td>                               <td><kbd>Č (6)</kbd></td></tr>
+            <tr><td lang="bs-Arab">ح̭</td> <td>Ć</td>    <td>hā s vokáněm pod</td>                  <td><kbd><span>AlrGr</span>+<span>Shift</span>+<span>J</span></kbd></td><td>Čaušević, znak není v Unicode, kombinace, nemusí se dobře zobrazovat<br/><span lang="bs">Čaušević,slovo nije u Unicode-u, kombinacije, moguć pogrešan prikaz</span></td></tr>
+            <tr><td lang="bs-Arab">ڃ</td> <td>Ć</td>    <td>ňē</td>                                <td><kbd><span><span>AltGr</span>+<span>Shift</span>+<span>T</span></span>, <span><span>Shift</span>+<span>H</span></span></kbd></td><td>Mustafić</td></tr>
+            <tr><td lang="bs-Arab">د</td> <td>D</td>    <td>dāl</td>                               <td><kbd>D</kbd></td></tr>
+            <tr><td lang="bs-Arab">ج</td> <td>Dž, Đ</td><td>džīm</td>                              <td><kbd>Ž (6)</kbd>, <kbd>G</kbd></td><td>Čaušević</td></tr>
+            <tr><td lang="bs-Arab">ݗ</td> <td>Đ</td>    <td>hā s dvěma tečkami nad</td>            <td><kbd><span><span>AltGr</span>+<span>T</span></span>, <span><span>Shift</span>+<span>H</span></span></kbd></td><td>Mustafić</td></tr>
+            <tr><td lang="bs-Arab">ڠ</td> <td>Đ</td>    <td>ajn s třemi tečkami nad</td>           <td><kbd><span>´ˇ</span>, <span>I</span></kbd></td><td>Čičak-al-Zubi</td></tr>
+            <tr><td lang="bs-Arab">ە</td> <td>E</td>    <td>ae</td>                                <td><kbd>E</kbd></td></tr>
+            <tr><td lang="bs-Arab">ف</td> <td>F</td>    <td>fā</td>                                <td><kbd>F</kbd></td></tr>
+            <tr><td lang="bs-Arab">غ</td> <td>G</td>    <td>ghajn</td>                             <td><kbd><span>Shift</span>+<span>G</span></kbd></td></tr>
+            <tr><td lang="bs-Arab">ح</td> <td>H</td>    <td>ḥā</td>                                <td><kbd><span>Shift</span>+<span>H</span></kbd></td></tr>
+            <tr><td lang="bs-Arab">اٖی</td><td>I</td>    <td>alif pod + alif maqṣūra</td>           <td><kbd><span>A</span>, <span><span>AltGr</span>+<span>Shift</span>+<span>A</span></span>, <span><span>AltGr</span>+<span>I</span></span></kbd></td></tr>
+            <tr><td lang="bs-Arab">ي</td> <td>J</td>    <td>jā</td>                                <td><kbd>J</kbd></td></tr>
+            <tr><td lang="bs-Arab">ق</td> <td>K</td>    <td>qāf</td>                               <td><kbd>Q</kbd></td></tr>
+            <tr><td lang="bs-Arab">ل</td> <td>L</td>    <td>lām</td>                               <td><kbd>L</kbd></td></tr>
+            <tr><td lang="bs-Arab">ڵ</td> <td>Lj</td>   <td>lām s malým v nad</td>                 <td><kbd><span><span>AltGr</span>+<span>Shift</span>+<span>X</span></span>, <span>L</span></kbd></td></tr>
+            <tr><td lang="bs-Arab">م</td> <td>M</td>    <td>mīm</td>                               <td><kbd>M</kbd></td></tr>
+            <tr><td lang="bs-Arab">ن</td> <td>N</td>    <td>nūn</td>                               <td><kbd>N</kbd></td></tr>
+            <tr><td lang="bs-Arab">ںٛ</td> <td>Nj</td>   <td>nūn ghunna s obráceným malým v nad</td><td><kbd><span><span>Shift</span>+<span>N</span></span>, <span><span>AlrGr</span>+<span>Shift</span>+<span>§!</span></span></kbd></td><td>Čaušević</td></tr>
+            <tr><td lang="bs-Arab">ݩ</td> <td>Nj</td>   <td>nūn s malým v nad</td>                 <td><kbd><span><span>AltGr</span>+<span>Shift</span>+<span>X</span></span>, <span>N</span></kbd>, <kbd><span>N</span>, <span><span>AltGr</span>+<span>!§</span></span></kbd></td><td>Mustafić</td></tr>
+            <tr><td lang="bs-Arab">ۉ</td> <td>O</td>    <td>kyrgyzské ju</td>                      <td><kbd><span>W</span>, <span><span>AltGr</span>+<span>Shift</span>+<span>§!</span></span></kbd>, <kbd><span>U</span>, <span><span>AltGr</span>+<span>Shift</span>+<span>§!</span></span></kbd>, <kbd><span><span>AltGr</span>+<span>Shift</span>+<span>C</span></span>, <span>W</span></kbd>, <kbd><span><span>AltGr</span>+<span>Shift</span>+<span>C</span></span>, <span>U</span></kbd></td></tr>
+            <tr><td lang="bs-Arab">پ</td> <td>P</td>    <td>pē</td>                                <td><kbd>P</kbd></td></tr>
+            <tr><td lang="bs-Arab">ر</td> <td>R</td>    <td>rā</td>                                <td><kbd>R</kbd></td></tr>
+            <tr><td lang="bs-Arab">س</td> <td>S</td>    <td>sīn</td>                               <td><kbd>S</kbd></td></tr>
+            <tr><td lang="bs-Arab">ش</td> <td>Š</td>    <td>šīn</td>                               <td><kbd>Š (3)</kbd></td></tr>
+            <tr><td lang="bs-Arab">ت</td> <td>T</td>    <td>tā</td>                                <td><kbd>T</kbd></td></tr>
+            <tr><td lang="bs-Arab">ۆ</td> <td>U</td>    <td>oe</td>                                <td><kbd><span>W</span>, <span><span>AltGr</span>+<span>§!</span></span></kbd>, <kbd><span>U</span>, <span><span>AltGr</span>+<span>§!</span></span></kbd>, <kbd><span><span>AltGr</span>+<span>Shift</span>+<span>X</span></span>, <span>W</span></kbd>, <kbd><span><span>AltGr</span>+<span>Shift</span>+<span>X</span></span>, <span>U</span></kbd></td></tr>
+            <tr><td lang="bs-Arab">و</td> <td>V</td>    <td>wāw</td>                               <td><kbd>W</kbd>, <kbd>U</kbd></td></tr>
+            <tr><td lang="bs-Arab">ز</td> <td>Z</td>    <td>zajn</td>                              <td><kbd>Z</kbd></td></tr>
+            <tr><td lang="bs-Arab">ژ</td> <td>Ž</td>    <td>jē</td>                                <td><kbd><span>´ˇ</span>, <span>R</span></kbd></td></tr>
+            <tr><td lang="bs-Arab">لا</td> <td>LA</td>   <td>lām + alif</td>                        <td><kbd><span>L</span>, <span>A</span></kbd></td></tr>
+            <tr><td lang="bs-Arab">ڵا</td> <td>LjA</td>  <td>lām s malým v nad + alif</td>          <td><kbd><span><span>AltGr</span>+<span>Shift</span>+<span>X</span></span>, <span>L</span>, <span>A</span></kbd></td></tr>
+        </tbody>
+    </thead>
+    <tfoot>
+        <tr><td colspan="5">* - arabský, převzato z Unicode, počeštěno</td></tr>
+        <tr lang="bs"><td colspan="5">* - iz arapskog, preuzeto iz Unicode-a, prilagođeno češkome</td></tr>
+    </tfoot>
+</table>
+TODO
+<table><caption>Turečtina (osmanská)</caption></table>
+<table><caption>Perština</caption></table>
+<table><caption>Darí</caption></table>
+<table><caption>Paštunština</caption></table>
+<table><caption>Urdu</caption></table>
+<table><caption>Ázerbájdžánština</caption></table>
+<table><caption>Somálština</caption></table>
+<table><caption>Malajština (Jawi)</caption></table>
+
+<p>© Đonny, <a href="http://doers.solutions" title="DOERS">D⬡ERS</a> 2018-2019</p>
+</body>
+</html>
