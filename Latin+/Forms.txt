@@ -1,0 +1,42 @@
+﻿1D400+	Bold			Cl	𝐀𝐚		Bold	✔
+1D434+	Italic			Cl	𝐴𝑎		Ital	✔
+1D468+	Bold Italic		Cl	𝑨𝒂		BI	✔
+
+1D49C+	Script			Cl	𝒜𝒶		Scrp	✔
+1D4D0+	Bold Script		Cl	𝓐𝓪		BS
+
+1D504+	Fraktur			Cl	𝔄𝔞		Frkt	✔
+1D56C+	Bold Fraktur		Cl	𝕬𝖆		BF
+
+1D538+	Double struck		Cl	𝔸𝕒		2Str	✔
+
+1D5A0+	Sans-serif		Cl	𝖠𝖺		XSer
+1D5D4+	Sans-serif Bold		Cl	𝗔𝗮		XB
+1D608+	Sans-serif Italic	Cl	𝘈𝘢		XI
+1D63C+	Sans-serif Bold Italic	Cl	𝘼𝙖		XBI
+
+1D670	Monospace		Cl	𝙰𝚊		Mono	✔
+
+ FF21+	Fullwidth		Cl	Ａａ		Wide
+
+1D110+	Parenthesiz		Cl	🄐⒜	l:249C+	Pare
+1F130+	Squared			C	🄰		Quad
+1F170+	Negative square		C	🅰		NQua
+ 24B6+	Circled			Cl	Ⓐ		Circ
+1F150+	Negative circle		C	🅐		OCrc
+
+E0041+	Tag			Cl	󠁁󠁡		Tagg
+
+1F1E6+	Regional indicator	C	🇦		Regn	✔
+
+  363+	Combining Small		 l	ͣ		Litt
+ 1D00+	Small Capital		C	ᴀ		UpLi
+ 1D2C+	Modifier		Cl	ᴬᵃ		Affe
+ 2090+	Subscript		 l	ₐ		Down
+
+----------------------------------
+
+1D6A8+	Greek Bold		Cl	𝚨𝛂		Bold
+1D6E2+	Greek Italic		Cl	𝛢𝛼		Ital
+1D71C+	Greek Bold Italic	Cl	𝜜𝜶		BI
+1D756+	Greek Sans-serif Bold	Cl	𝝖𝝰		XB

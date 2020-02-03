@@ -1,0 +1,9 @@
+;The comment below contains SFX script commands
+
+Setup=setup.exe
+TempMode
+Title=Keyboard installation
+Text
+{
+Instalace klávesnice
+}
