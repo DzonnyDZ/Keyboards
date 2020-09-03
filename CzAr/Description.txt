@@ -1,5 +1,7 @@
-Druhá verze arabské fonetické klávesnice pøináší zásadní zmìnu rozloení lépe reflektující pouívané znaky arabské abecedy, jako i širší podporu pro nearabské znaky (perština, kurdština atd.). Pro návod k instalaci vizte napø. Ruskou (rozloení jako latinka).
+DruhÃ¡ verze arabskÃ© fonetickÃ© klÃ¡vesnice pÅ™inÃ¡Å¡Ã­ zÃ¡sadnÃ­ zmÄ›nu rozloÅ¾enÃ­ lÃ©pe reflektujÃ­cÃ­ pouÅ¾Ã­vanÃ© znaky arabskÃ© abecedy, jakoÅ¾ i Å¡irÅ¡Ã­ podporu pro nearabskÃ© znaky (perÅ¡tina, kurdÅ¡tina atd.). Pro nÃ¡vod k instalaci vizte napÅ™. Ruskou (rozloÅ¾enÃ­ jako latinka).
 Verze QWERTZ pro Win NT4.0/2000/XP/2003/Vista/2008/7/8*/10* platformy x86/x64/Itanium.
+Verze 2.5 opravuje pozici Alif MaksÅ«ra vs. Farsi Jeh
 ---
-Second version of Arabic phonecti keyboard brings radila laoyut change to better reflect used Arabich characters as well as better support for non-Arabic letter (Persian, Kurdish etc.). For setup instructions see e.g. Russian (Latin Layout) (Ruská (rozloení jako latinka)).
+Second version of Arabic phonecti keyboard brings radila laoyut change to better reflect used Arabich characters as well as better support for non-Arabic letter (Persian, Kurdish etc.). For setup instructions see e.g. Russian (Latin Layout) (RuskÃ¡ (rozloÅ¾enÃ­ jako latinka)).
 Version: QWERTZ for Win NT4.0/2000/XP/2003/Vista/2008/7/8*/10* platforms x86/x64/Itanium.
+Version 2.5 fixes Alef Maksurah position vs. Farsi Yeh
